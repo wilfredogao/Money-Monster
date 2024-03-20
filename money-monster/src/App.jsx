@@ -1,15 +1,51 @@
 import { useState } from 'react'
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import './App.css'
-import LoginSignUp from './Components/LoginSignUp/LoginSignUp'
+import SignUp from './Components/LoginSignUp/SignUp'
+import LogIn from './Components/LoginSignUp/Login'
+import Banner from './Components/Banner/Banner'
+import Main from './Components/Main/Main'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element:
+      <div>
+        <Banner/>
+        <Main/>
+      </div>
+  },
+  {
+    path: "/signup",
+    element:
+      <div>
+        <Banner/>
+        <SignUp/>
+      </div>
+  },
+  {
+    path: "/login",
+    element:
+      <div>
+        <Banner/>
+        <LogIn/>
+      </div>
+  },
+  {
+    path: "/app",
+    element:
+      <div style={{color: "black"}}>
+        Hello World
+      </div>
+  }
+])
 
 function App() {
   
 
   return (
-      <div>
-        <LoginSignUp/>
-      </div>
+    <RouterProvider router={router} />
   )
 }
 
-export default App
+export default App;

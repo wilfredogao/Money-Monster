@@ -2,10 +2,12 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 40px;
     width: 600px;
-    padding-bottom: 30px;
-    outline: black;
+    padding-bottom: 0;
+    background-color: #77DD77;
+    border-radius: 10px;
+    margin-bottom: 40px;
 }
 
 .header {
@@ -31,10 +33,10 @@
 }
 
 .inputs {
-    margin-top: 55px;
+    margin-top: 45px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .input {
@@ -42,8 +44,8 @@
     align-items: center;
     margin: auto;
     width: 480px;
-    height: 80px;
-    background: #eaeaea;
+    height: 70px;
+    background: white;
     border-radius: 6px;
 }
 
@@ -62,21 +64,21 @@
 }
 
 .forgot-password{
-    padding-left: 0px;
+    padding-left: 65px;
     margin-top: 27px;
     color: #797979;
     font-size: 18px;
 }
 
 .forgot-password span {
-    color: #77DD77;
+    color: white;
     cursor: pointer;
 }
 
 .submit-container{
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    margin: 50px auto;
 }
 
 .submit {
@@ -85,12 +87,13 @@
     align-items: center;
     width: 220px;
     height: 59px;
-    color: #fff;
+    color: black;
     background: #77DD77;
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;
     cursor: pointer;
+    border: 2px solid white; /* Set your desired outline color */
 }
 
 .gray {
