@@ -14,7 +14,10 @@ const SignUp = () => {
     return (
         <div className='container'>
             <div className ="header">
-                <div className='text'>Sign Up</div>
+                <div className='status-container'>
+                    <div className="form" onClick={()=>{}}>Sign Up</div>
+                    <div className="form gray" onClick={()=>{navigate("/login")}}>Login</div>
+                </div>
                 <div className='underline'></div>
             </div>
             <div className='inputs'>
@@ -35,10 +38,7 @@ const SignUp = () => {
                     <input type="password" placeholder='Retype Password' />
                 </div>
             </div>
-            <div className='submit-container'>
-                <div className="submit" onClick={()=>{}}>Sign Up</div>
-                <div className="submit gray" onClick={()=>{navigate("/login")}}>Login</div>
-            </div>
+            <div className="submit" onClick={()=>{}}>Sign Up</div>
         </div>
     )
 }

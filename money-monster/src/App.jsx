@@ -5,6 +5,7 @@ import SignUp from './Components/LoginSignUp/SignUp'
 import LogIn from './Components/LoginSignUp/Login'
 import Banner from './Components/Banner/Banner'
 import Main from './Components/Main/Main'
+import Temp from './Components/Temp/Temp'
 
 const router = createBrowserRouter([
   {
@@ -34,8 +35,9 @@ const router = createBrowserRouter([
   {
     path: "/app",
     element:
-      <div style={{color: "black"}}>
-        Hello World
+      <div>
+        <Banner/>
+        <Temp />
       </div>
   }
 ])
