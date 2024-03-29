@@ -12,26 +12,20 @@
     color: white;
   }
   
-  .nav-links {
-    list-style: none;
-    padding: 0;
+  .creature-section h2 {
+    display: block;
+    text-align: center;
   }
-  
-  .nav-links li {
-    display: inline;
-    margin: 0 10px;
-  }
-  
-  .nav-links a {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .budget-overview, .creature-section {
-    margin-top: 20px;
+
+  .creature-section {
+    margin: 20px 1000px;
     padding: 20px;
     border: 1px solid black;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .creature-display {

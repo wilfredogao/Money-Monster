@@ -5,7 +5,7 @@ import SignUp from './Components/LoginSignUp/SignUp'
 import LogIn from './Components/LoginSignUp/Login'
 import Banner from './Components/Banner/Banner'
 import Main from './Components/Main/Main'
-import Temp from './Components/Temp/Temp'
+import Home from './Components/Home/Home'
 
 const router = createBrowserRouter([
   {
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     element:
       <div>
         <Banner/>
-        <Temp />
+        <Home />
       </div>
   }
 ])
