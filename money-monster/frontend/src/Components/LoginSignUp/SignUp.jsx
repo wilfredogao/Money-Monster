@@ -32,6 +32,7 @@ const SignUp = () => {
             console.error('Error:', error);
         }
     };
+    
     return (
         <div className='container'>
             <div className ="header">
