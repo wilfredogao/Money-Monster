@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
 .banner {
     display: flex;
     background-color: #77DD77; /* Green color code */
@@ -40,6 +42,12 @@ p {
     cursor: pointer;
     border: 2px solid white;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-text {
     display: flex;
     align-items: center;
     justify-content: center;

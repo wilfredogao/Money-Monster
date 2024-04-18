@@ -1,19 +1,22 @@
-const express = require("express");
+const express = require('express');
+const userRoutes = require('./userroutes');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+
+// CORS options
+const corsOptions = {
+    origin: true, // Allow only requests from your React application
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
 const app = express();
+app.use(express.json());
+app.use(cors(corsOptions));
 
-app.use(cors());
-app.use(bodyParser.json());
 
-app.post('/api/signup', (req, res) => {
-    const { username, email, password, retypePassword } = req.body;
-    console.log('Received signup data:', { username, email, password, retypePassword });
-    // Handle the signup logic here
-    // You can save the data to your database or perform any necessary operations
-    return res.json({ message: 'Signup successful' });
+// Use routes defined in userRoutes.js
+app.use('/api', userRoutes);
+
+const PORT = process.env.PORT || 8081;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-
-app.listen(8081, () => {
-    console.log("Listening");
-})
