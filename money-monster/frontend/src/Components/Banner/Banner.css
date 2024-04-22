@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+.banner {
+    display: flex;
+    background-color: #77DD77; /* Green color code */
+    padding: 10px;
+    color: black; /* White text color, adjust as needed */
+    width: 100%;
+    font-family: Irish Grover, Tahoma, sans-serif, sans-serif, Georgia;
+    font-size: 40px;
+    margin-bottom: 55px;
+    margin-top: 0;
+    max-height: 75px;
+}
+
+p {
+    margin: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 20px;
+    border-radius: 2px;
+}
+
+.login {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    white-space: pre-line;
+    width: 220px;
+    height: 59px;
+    color: black;
+    background: #77DD77;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
