@@ -36,3 +36,78 @@ progress {
   width: 100%;
   height: 20px;
 }
+
+.budget-section {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: auto;
+  padding: 1%;
+  margin-bottom: 50px;
+}
+
+ .new-expense {
+  width: 25px;
+  height: 25px;
+} 
+
+.budget-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.expense-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.expense-list .expense-item {
+  padding: 8px;
+  margin: 5px 0;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  font-size: 16px;
+}
+
+.expense-list .expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-list .expense-item strong {
+  font-weight: 600;
+  color: #212529;
+}
+
+/* Basic styling for the progress element */
+progress {
+  margin-top: 20px;
+  width: 100%;        /* Makes the progress bar span the width of its container */
+  height: 20px;       /* Makes the progress bar thicker */
+  color: #4CAF50;     /* Color of the progress value (not widely supported) */
+  background-color: #eee; /* Background color of the progress bar */
+}
+
+/* Chrome, Safari, newer Edge versions */
+progress::-webkit-progress-bar {
+  background-color: #eee;
+}
+
+progress::-webkit-progress-value {
+  background-color: #4CAF50;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+  background-color: #4CAF50;
+}
+
+.delete-button {
+  margin-left: 95%;
+}
