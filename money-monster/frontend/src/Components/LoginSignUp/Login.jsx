@@ -29,6 +29,7 @@ const Login = () => {
                 console.log(response.data.message)
             }
             else {
+                localStorage.setItem('userToken', response.data.token); // Save the token
                 console.log('Login success!');
                 navigate('/app');
             }

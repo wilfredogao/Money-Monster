@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
+import {useNavigate} from "react-router-dom"
+import axios from 'axios';
 import "./Home.css"
 import 'reactjs-popup/dist/index.css';
 
@@ -9,6 +11,8 @@ import angryMonster from '../Assets/angry.png';
 
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState('');
   const [newExpenseAmount, setNewExpenseAmount] = useState('');
   const [newExpenseTitle, setNewExpenseTitle] = useState('');
@@ -40,10 +44,34 @@ export const Home = () => {
     }
   }
 
+  const handleDeleteAccount = async () => {
+    const token = localStorage.getItem('userToken');
+    if (!token) {
+        alert('No token found, please log in.');
+        navigate('/login');
+        return;
+    }
+    try {
+        const response = await axios.delete('http://localhost:8081/api/delete-account', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        if (response.status === 200) {
+            alert('Account deleted successfully!');
+            localStorage.removeItem('userToken');
+            navigate('/');
+        }
+    } catch (error) {
+        alert('Failed to delete account: ' + (error.response ? error.response.data.error : 'Server error'));
+    }
+};
+
+
   return (
     <div className='App-Main'>
       <main>
-        <button className='delete-button'>Delete</button>
+        <button className='delete-button' onClick={handleDeleteAccount}>Delete</button>
         <div className='budget-section'>
           <div className='budget-num'>${budgetValue}</div>
         <Popup 
