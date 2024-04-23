@@ -111,3 +111,8 @@ progress::-moz-progress-bar {
 .delete-button {
   margin-left: 95%;
 }
+
+img {
+  height: auto;
+  max-width: 90%;
+}
