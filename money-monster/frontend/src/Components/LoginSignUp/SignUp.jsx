@@ -24,10 +24,20 @@ const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (formData.password !== formData.retypePassword) {
+            console.error('Passwords do not match');
+            return; // Prevent form submission if passwords do not match
+        }
+    
         try {
             const response = await axios.post('http://localhost:8081/api/signup', formData);
-            console.log('Signup success:', response.data.message);
-            navigate('/app');
+            if (response.data.token) {
+                localStorage.setItem('userToken', response.data.token); // Save the token
+                console.log('Signup success:', response.data.message);
+                navigate('/app'); // Redirect user after successful signup
+            } else {
+                console.log('Signup failed:', response.data.message);
+            }
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 console.error('Network Error:', error.message);
@@ -41,6 +51,7 @@ const SignUp = () => {
             }
         }
     };
+    
     
 
     

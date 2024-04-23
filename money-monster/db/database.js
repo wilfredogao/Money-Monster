@@ -22,7 +22,9 @@ const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CR
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       username TEXT NOT NULL UNIQUE,
       email TEXT NOT NULL UNIQUE,
-      password TEXT NOT NULL
+      password TEXT NOT NULL,
+      budget DECIMAL(10, 2),
+      totalExpenses DECIMAL(10, 2)
     )`, (err) => {
       if (err) {
         console.log('Error when creating the users table:', err);
