@@ -129,12 +129,25 @@ const handleExpenseSubmit = (close) => {
         alert('Failed to delete account: ' + (error.response ? error.response.data.error : 'Server error'));
     }
 };
+const numericBudgetValue = Number(budgetValue);  // Ensure it's treated as a number
+let progressBar;
+if (totalExpenses > numericBudgetValue) {
+  progressBar = "over";
+} else {
+  progressBar = "less";
+}
 
 
   return (
     <div className='App-Main'>
       <main>
-        <button className='delete-button' onClick={handleDeleteAccount}>Delete</button>
+      <button className='delete-button' onClick={handleDeleteAccount}>Delete Account</button>
+      <section className="creature-section">
+          <h2>Your Monster</h2>
+          <div className="creature-display">
+            <img src={monsterImage} alt="Your creature" />
+          </div>
+        </section>
         <div className='budget-section'>
           <div className='budget-num'>${budgetValue}</div>
         <Popup 
@@ -158,7 +171,7 @@ const handleExpenseSubmit = (close) => {
               </div>
             )}
         </Popup>
-        <progress value={totalExpenses} max={budgetValue}></progress>
+        <progress className={progressBar} value={totalExpenses} max={budgetValue}></progress>
         <div className="expense-list">
           {expenses.map((expense, index) => (
             <div key={index} className="expense-item">
@@ -198,12 +211,6 @@ const handleExpenseSubmit = (close) => {
             )}
         </Popup>
         </div>
-        <section className="creature-section">
-          <h2>Your Monster</h2>
-          <div className="creature-display">
-            <img src={monsterImage} alt="Your creature" />
-          </div>
-        </section>
       </main>
     </div>
   )
