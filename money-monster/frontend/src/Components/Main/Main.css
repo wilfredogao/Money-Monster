@@ -5,7 +5,6 @@
     justify-content: center;
     flex-direction: column;
     font-size: 50px;
-
     /* money falling 
     background-repeat: repeat; /* This will tile the background image across the element 
     background-size: auto;  Adjust as needed; 'auto' maintains the original image size 
@@ -15,6 +14,7 @@
 .main-text {
     text-align: center;
     width: 30%;
+    margin-top: 30px;
 }
 
 .create-button {
